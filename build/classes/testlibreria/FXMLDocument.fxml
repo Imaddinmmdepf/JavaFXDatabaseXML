@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioMenuItem?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="borderPane" prefHeight="800.0" prefWidth="1110.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="testlibreria.FXMLDocumentController">
+   <center>
+      <TableView fx:id="tableView" focusTraversable="false" prefHeight="200.0" prefWidth="200.0">
+         <BorderPane.margin>
+            <Insets left="5.0" top="5.0" />
+         </BorderPane.margin></TableView>
+   </center>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="_File">
+            <items>
+              <MenuItem fx:id="close" mnemonicParsing="false" text="Close">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="Q" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="_Display">
+            <items>
+                  <RadioMenuItem fx:id="tableStudents" mnemonicParsing="false" onAction="#setTableToStudents" text="Students">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="displayable" />
+                     </toggleGroup>
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </RadioMenuItem>
+                  <RadioMenuItem fx:id="tableCourses" mnemonicParsing="false" onAction="#setTableToCourses" text="Courses" toggleGroup="$displayable">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="C" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></RadioMenuItem>
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="_Settings">
+               <items>
+                  <Menu mnemonicParsing="false" text="Theme">
+                     <items>
+                        <RadioMenuItem fx:id="lightTheme" mnemonicParsing="false" onAction="#changeTheme" text="Light">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="theme" />
+                           </toggleGroup>
+                        </RadioMenuItem>
+                        <RadioMenuItem fx:id="darkTheme" mnemonicParsing="false" onAction="#changeTheme" text="Dark" toggleGroup="$theme" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Font size">
+                    <items>
+                        <RadioMenuItem fx:id="smallFontSize" mnemonicParsing="false" onAction="#changeFontSize" text="50%">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="font" />
+                           </toggleGroup>
+                        </RadioMenuItem>
+                        <RadioMenuItem fx:id="normalFontSize" mnemonicParsing="false" onAction="#changeFontSize" text="100%" toggleGroup="$font" />
+                        <RadioMenuItem fx:id="bigFontSize" mnemonicParsing="false" onAction="#changeFontSize" text="150%" toggleGroup="$font" />
+                    </items>
+                  </Menu>
+               </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="_Help">
+            <items>
+              <MenuItem fx:id="about" mnemonicParsing="false" onAction="#aboutHandler" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <bottom>
+      <Label fx:id="control" text="Control label" BorderPane.alignment="CENTER_LEFT">
+         <BorderPane.margin>
+            <Insets bottom="5.0" left="10.0" top="5.0" />
+         </BorderPane.margin>
+      </Label>
+   </bottom>
+   <right>
+      <GridPane alignment="TOP_CENTER" maxHeight="5000.0" maxWidth="5000.0" minHeight="21.0" minWidth="20.0" prefHeight="200.0" prefWidth="150.0">
+         <columnConstraints>
+            <ColumnConstraints minWidth="10.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="283.0" valignment="TOP" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="0.0" prefHeight="41.0" />
+            <RowConstraints minHeight="0.0" prefHeight="43.0" />
+            <RowConstraints minHeight="10.0" prefHeight="71.0" valignment="BOTTOM" />
+            <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="310.0" />
+         </rowConstraints>
+         <children>
+            <Label fx:id="tableTag" alignment="TOP_LEFT" contentDisplay="CENTER" text="Students">
+               <font>
+                  <Font size="26.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets top="20.0" />
+               </GridPane.margin>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Label>
+            <Button fx:id="addButtonMain" focusTraversable="false" mnemonicParsing="false" onAction="#addHandler" prefWidth="120.0" text="Add" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </Button>
+            <Button fx:id="modifyButtonMain" focusTraversable="false" mnemonicParsing="false" onAction="#modifyHandler" prefWidth="120.0" text="Modify" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </Button>
+            <Button fx:id="deleteButtonMain" focusTraversable="false" mnemonicParsing="false" onAction="#deleteHandler" prefWidth="120.0" text="Delete" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </Button>
+            <Button fx:id="showCourses" alignment="TOP_CENTER" contentDisplay="CENTER" focusTraversable="false" mnemonicParsing="false" onAction="#showCourses" prefWidth="120.0" text="Courses" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="BOTTOM">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </Button>
+         </children>
+      </GridPane>
+   </right>
+</BorderPane>
