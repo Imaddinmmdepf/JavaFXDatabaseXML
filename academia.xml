@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<academia>
+    <alumnos>
+        <dni>455</dni>
+        <nombre>Imaddin</nombre>
+        <direccion>Castillas</direccion>
+        <edad>25</edad>
+        <fechadealta>2018-04-05</fechadealta>
+    </alumnos>
+    <cursos>
+        <aula>Turing</aula>
+        <diasimparte>Lunes</diasimparte>
+        <diasimparte>Viernes</diasimparte>
+        <fechafin>2018-04-28</fechafin>
+        <fechainicio>2018-03-29</fechainicio>
+        <hora>22:25</hora>
+        <numeroMaximodeAlumnos>25</numeroMaximodeAlumnos>
+        <profesorAsignado>Nahuel</profesorAsignado>
+        <titulodelcurso>Power</titulodelcurso>
+    </cursos>
+    <matriculas>
+        <alumno>
+            <dni>455</dni>
+            <nombre>Imaddin</nombre>
+            <direccion>Castillas</direccion>
+            <edad>25</edad>
+            <fechadealta>2018-04-05</fechadealta>
+        </alumno>
+        <curso>
+            <aula>Turing</aula>
+            <diasimparte>Lunes</diasimparte>
+            <diasimparte>Viernes</diasimparte>
+            <fechafin>2018-04-28</fechafin>
+            <fechainicio>2018-03-29</fechainicio>
+            <hora>22:25</hora>
+            <numeroMaximodeAlumnos>25</numeroMaximodeAlumnos>
+            <profesorAsignado>Nahuel</profesorAsignado>
+            <titulodelcurso>Power</titulodelcurso>
+        </curso>
+        <fecha>2018-03-29</fecha>
+    </matriculas>
+</academia>
